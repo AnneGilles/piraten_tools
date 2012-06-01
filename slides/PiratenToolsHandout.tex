@@ -1,0 +1,77 @@
+%
+% 	Einsteigerworkshop-Prsentation "Piraten-Tools"
+%
+%	Christoph Scheid
+%
+% 	to produce verbose slides (one page per item/bullet point), use
+%\documentclass{beamer}
+%
+% 	but if you want to produce handouts for printing, use
+\documentclass[handout]{beamer} 
+%
+%	and while developing, use this for speed :-)
+%\documentclass[draft,handout]{beamer}% 		no graphics (just placeholders), one slide per frame
+%\documentclass[draft]{beamer}% 				no graphics (just placeholders), one slide per item
+%
+%	make graphics optional in handout mode (preparation)
+\usepackage{ifthen}
+\newboolean{makeHandoutWithoutGraphics}
+%
+%	uncomment this for handout mode WITHOUT graphics
+%      comment out for verbose slides WITH images
+\setboolean{makeHandoutWithoutGraphics}{true}
+%
+
+%
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+%
+%	textpos is used to place images in arbitrary positions
+\usepackage[absolute, overlay]{textpos}
+\setlength{\TPHorizModule}{10mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0mm}{0mm}
+
+\usepackage{geometry}
+\usepackage{texments} %Note that if you use the texments commands 
+% to highlight text inside of beamer presentations, you need to 
+% mark the frames with the code âfragileâ, like this:
+% \begin{frame}[fragile] ... \end{frame}
+
+\usepackage{color}
+%\usepackage{movie15} % embed videos; playback only works in acrobat
+\usepackage{listings} \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} \lstset{language=Python}
+\usepackage{hyperref}
+\vfill
+\title{piratiger Einsteigerworkshop}
+\author{Christoph Scheid}
+%\date{\today}
+
+
+\usetheme{Singapore} % this one takes time when compiling,
+      % while it generates a clickable overview on each page
+%\usetheme{Bergen}
+
+\begin{document}
+
+% for hyperref: frenchlinks=true ?
+\hypersetup{frenchlinks=true}
+
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{\"Ubersicht}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+%% Outline slides at beginning of subsections?
+%\AtBeginSubsection[]
+%{
+%   \begin{frame}
+%       \frametitle{\"Ubersicht}
+%       \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+%}
+
+
+\include{PiratenTools}
