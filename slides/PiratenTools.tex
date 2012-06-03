@@ -566,14 +566,23 @@ Anfragen, Antr\"age, Brainstorming, Pressemitteilung, Homepage-Text, \dots
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\frame{\Huge Noch Fragen?}
+\ifthenelse{\boolean{makeHandoutWithoutGraphics}}{}{\frame{\Huge Noch Fragen?}}
 
-\frame{
+\ifthenelse{\boolean{makeHandoutWithoutGraphics}}{}{\frame{
 	\Huge Danke!
 
+        \vspace{1cm}
 
 	\normalsize
-	fork me on github!
-}
+	Folien-Quellcode: \hfill \url{https://github.com/AnneGilles/piraten_tools}
+             \begin{textblock}{0}(7.5,0)
+                \includegraphics[scale=1]{img/github-ribbon}
+             \end{textblock}%
+
+        \vspace{1cm}
+
+        Kontakt: christoph.scheid@piratenpartei-hessen.de
+
+}}
 
 \end{document}
